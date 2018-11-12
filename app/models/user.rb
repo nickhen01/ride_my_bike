@@ -4,7 +4,4 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :bicycles, dependent: :destroy
-  validates :name, presence: true
-  validates :address, presence: true
-  validates :category, inclusion: { in: ["owner", "cyclist"] }
 end
