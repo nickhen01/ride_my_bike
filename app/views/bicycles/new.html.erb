@@ -3,7 +3,7 @@
     <div class="col-sm-4 col-offset-4">
       <h2>Add a bicycle!</h2>
 
-      <%= simple_form_for @bicycle do |f| %>
+      <%= simple_form_for [@user, @bicycle] do |f| %>
         <%= f.input :brand %>
         <%= f.input :model %>
         <%= f.input :post_code, label: "Postcode" %>
