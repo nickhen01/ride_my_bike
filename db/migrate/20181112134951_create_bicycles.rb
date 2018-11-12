@@ -3,7 +3,6 @@ class CreateBicycles < ActiveRecord::Migration[5.2]
     create_table :bicycles do |t|
       t.integer :price
       t.references :user, foreign_key: true
-      t.string :title
 
       t.timestamps
     end
