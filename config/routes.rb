@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :bicycles do
     resources :bookings
   end
+  get 'bookings', to: 'bookings#user_bookings', as: :user_bookings
 end

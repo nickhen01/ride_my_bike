@@ -1,0 +1,12 @@
+<ul>
+  <% @bookings.each do |booking| %>
+    <li>
+      <%= cl_image_tag Bicycle.find(booking.bicycle_id).photo %>
+      <p>Brand: <%= Bicycle.find(booking.bicycle_id).brand %></p>
+      <p>Model: <%= Bicycle.find(booking.bicycle_id).model %></p>
+      <p>Start date: <%= booking.date_start %></p>
+      <p>End date: <%= booking.date_end %></p>
+      <%= link_to "delete", bicycle_booking_path(booking.bicycle, booking), method: "delete", data: {confirm: "Are you sure"} %></li>
+    </li>
+  <% end %>
+</ul>
