@@ -1,0 +1,11 @@
+<ul>
+  <li><%= cl_image_tag Bicycle.find(@booking.bicycle_id).photo %></li>
+  <li>Brand: <%= Bicycle.find(@booking.bicycle_id).brand %></li>
+  <li>Model: <%= Bicycle.find(@booking.bicycle_id).model %></li>
+  <li>Start date: <%= @booking.date_start %></li>
+  <li>End date: <%= @booking.date_end %></li>
+</ul>
+
+
+
+
