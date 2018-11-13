@@ -13,15 +13,13 @@ class BicyclesController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:user_id])
     @bicycle = Bicycle.new
   end
 
   def create
-    user = User.find(params[:user_id])
     @bicycle = Bicycle.new(bicycle_params)
-    @bicycle.user = user
-    if @user.save
+    @bicycle.user = current_user
+    if @bicycle.save
       redirect_to bicycle_path(@bicycle)
     else
       render :new
