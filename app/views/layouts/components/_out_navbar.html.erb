@@ -17,8 +17,8 @@
       <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <li><a href="#">About</a></li>
-        <li><a href="#">Sign up</a></li>
-        <li><a href="#">Log in</a></li>
+        <li><%= link_to("Sign up", new_user_registration_path, method: "get") %></li>
+        <li><%= link_to("Log in", new_user_session_path, method: "get") %></li>
       </ul>
     </div>
   </div>
