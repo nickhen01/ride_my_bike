@@ -1,18 +1,16 @@
-<div class="container">
-
-
-<div class="col-sm-3">
-  <div class="sidebar">
-    <div class="main">
-      <%= link_to 'Edit Profil', 'views/bicycles/photos.html.erb' %>
-      <%= link_to 'Photos', '/' %>
-      <%= link_to 'Reviews', '/' %>
-      <%= link_to 'Trust and Verification', '/' %>
+<div class="container container-form">
+  <div class="col-3 col-sm-3">
+    <div class="sidebar">
+      <div class="main">
+        <%= link_to 'Edit Profil', '/' %>
+        <%= link_to 'Photos', '/' %>
+        <%= link_to 'Reviews', '/' %>
+        <%= link_to 'Trust and Verification', '/' %>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="col-sm-9">
-<%= render 'layouts/components/form.html.erb' %>
-</div>
+  <div class="col-9 col-sm-9">
+    <%= render 'layouts/components/form.html.erb' %>
+  </div>
 </div>
