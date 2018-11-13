@@ -1,0 +1,50 @@
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
+h2 {
+  font-family: 'Nunito', sans-serif;
+}
+
+.side-by-side {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bicycle-image-size {
+  width: 500px;
+}
+
+.bicycle-image {
+  margin-right: 30px;
+}
+
+.booking-info {
+  margin-top: 20px;
+}
+
+.booking-info p {
+  font-size: 1.6em;
+}
+
+.make-orange {
+  background-color: #E57C51;
+  border-color: #E57C51;
+}
+
+.make-orange:hover {
+  background-color: #c74d0c;
+  border-color: #c74d0c;
+}
+
+.make-orange:active {
+  background-color: #c74d0c;
+  border-color: #c74d0c;
+}
+
+.confirm-booking {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+

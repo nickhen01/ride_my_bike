@@ -6,6 +6,7 @@ class BookingsController < ApplicationController
   end
 
   def show
+    calculate_total_price
   end
 
   def new
@@ -50,5 +51,9 @@ class BookingsController < ApplicationController
 
   def find_bicycle
     Bicycle.find(params[:bicycle_id])
+  end
+
+  def calculate_total_price
+    @price = @booking.bicycle.price * ((@booking.date_end - @booking.date_start) * 0.000277778).floor
   end
 end
