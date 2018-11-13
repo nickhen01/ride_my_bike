@@ -1,0 +1,25 @@
+<div class="navbar-wagon navbar-fixed-top">
+  <!-- Logo -->
+  <a href="/" class="navbar-wagon-brand">
+   <p>WantToRide</p>
+  </a>
+
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+    <a href="" class="navbar-wagon-item navbar-wagon-link">About</a>
+    <a href="" class="navbar-wagon-item navbar-wagon-link">Sign up</a>
+    <%= link_to("Log in", new_user_session_path, method: "get", class: "navbar-wagon-link navbar-wagon-item") %>
+  </div>
+
+  <!-- Dropdown appearing on mobile only -->
+  <div class="navbar-wagon-item hidden-md hidden-lg">
+    <div class="dropdown">
+      <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Sign up</a></li>
+        <li><a href="#">Log in</a></li>
+      </ul>
+    </div>
+  </div>
+</div>

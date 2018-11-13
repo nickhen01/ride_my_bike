@@ -1,17 +1,2 @@
 <%= render 'layouts/components/banner.html.erb' %>
-<h2 class="text-center">Bicycles</h2>
-<div class="container">
-  <div class="row">
-    <% @bicycles.each do |bicycle| %>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path bicycle.photo %>);">
-          <div class="card-description">
-            <%= link_to bicycle.brand%>
-            <%= bicycle.model %>
-          </div>
-          <%= link_to "", bicycle_path(bicycle), class: "card-link"%>
-        </div>
-      </div>
-    <% end %>
-  </div>
-</div>
+<%= render 'layouts/components/card.html.erb' %>
