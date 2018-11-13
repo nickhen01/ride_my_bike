@@ -1,9 +1,9 @@
 class BookingsController < ApplicationController
   before_action :find_booking, only: [:show, :edit, :update, :destroy]
 
-  def index
-    @bookings = Booking.all
-  end
+  # def index
+  #   @bookings = Booking.all
+  # end
 
   def show
     calculate_total_price
@@ -41,6 +41,10 @@ class BookingsController < ApplicationController
 
   def user_bookings
     @bookings = Booking.where(user_id: current_user)
+  end
+
+  def bicycle_bookings
+    @bookings = Booking.where(bicycle_id: params[:bicycle_id])
   end
 
   private
