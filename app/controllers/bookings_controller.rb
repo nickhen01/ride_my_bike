@@ -39,6 +39,10 @@ class BookingsController < ApplicationController
     redirect_to bicycle_bookings_path
   end
 
+  def user_bookings
+    @bookings = Booking.where(user_id: current_user)
+  end
+
   private
 
   def booking_params
