@@ -8,7 +8,7 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <a href="" class="navbar-wagon-item navbar-wagon-link">About</a>
     <a href="" class="navbar-wagon-item navbar-wagon-link">Sign up</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Log in</a>
+    <%= link_to("Log in", new_user_session_path, method: "get", class: "navbar-wagon-link") %>
   </div>
 
   <!-- Dropdown appearing on mobile only -->

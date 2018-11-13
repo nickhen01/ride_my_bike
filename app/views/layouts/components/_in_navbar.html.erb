@@ -17,7 +17,7 @@
         <%= image_tag "dashing_nick.jpeg", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", data: {toggle:"dropdown"} %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li><a href="#">Edit Profile</a></li>
-          <li><a href="#">Log Out</a></li>
+          <li><%= link_to("Log out", destroy_user_session_path, method: "delete") %></li>
         </ul>
       </div>
     </div>
