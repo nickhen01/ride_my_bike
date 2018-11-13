@@ -1,10 +1,23 @@
-<ul>
-  <li><%= cl_image_tag Bicycle.find(@booking.bicycle_id).photo %></li>
-  <li>Brand: <%= Bicycle.find(@booking.bicycle_id).brand %></li>
-  <li>Model: <%= Bicycle.find(@booking.bicycle_id).model %></li>
-  <li>Start date: <%= @booking.date_start %></li>
-  <li>End date: <%= @booking.date_end %></li>
-</ul>
+<div class="container">
+<h2>Review booking details</h2>
+  <div class="side-by-side">
+    <div class="booking-info">
+      <p><strong>Brand: </strong><%= Bicycle.find(@booking.bicycle_id).brand %></p>
+      <p><strong>Model: </strong><%= Bicycle.find(@booking.bicycle_id).model %></p>
+      <p><strong>Start Date: </strong><%= @booking.date_start.strftime("%d/%m/%Y at %l %p") %> </p>
+      <p><strong>End Date: </strong><%= @booking.date_end.strftime("%d/%m/%Y at %l %p") %></p>
+      <p><strong>Total Price: </strong>£<%= @price %></p>
+
+    </div>
+    <div class="bicycle-image">
+      <%= cl_image_tag Bicycle.find(@booking.bicycle_id).photo, class: "bicycle-image-size" %><br>
+      <div class="confirm-booking">
+        <%= link_to "Confirm Booking", "#", class: "btn btn-primary make-orange" %>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 
