@@ -3,6 +3,7 @@ require 'json'
 
 class BicyclesController < ApplicationController
   before_action :find_bicycle, only: [:show, :edit, :update, :destroy, :area_by_postcode]
+  skip_before_action :authenticate_user!, only: [:index, :show, :new]
 
   def index
     @bicycles = Bicycle.all
