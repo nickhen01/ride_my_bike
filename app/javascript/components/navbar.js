@@ -12,8 +12,9 @@ function initUpdateNavbarOnScroll() {
       });
     }
   } else {
-    navbar.classList.add('navbar-wagon-white')
+    navbar.classList.add('navbar-wagon-white');
   }
 }
 
 export { initUpdateNavbarOnScroll };
+
