@@ -21,7 +21,7 @@ class BicyclesController < ApplicationController
     @bicycle = Bicycle.new(bicycle_params)
     @bicycle.user = current_user
     if @bicycle.save
-      redirect_to bicycle_path(@bicycle)
+      redirect_to bicycle_path(@bicycle), notice: 'Bicycle was successfully updated.'
     else
       render :new
     end
