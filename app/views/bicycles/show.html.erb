@@ -1,5 +1,3 @@
-
-
 <div class ="bike_image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path @bicycle.photo %>);">
 </div>
 <div class = "container">
@@ -8,7 +6,7 @@
       <div class = "description_card">
         <h2><%= "#{@bicycle.brand.capitalize} #{@bicycle.model.capitalize}" %></h2>
         <h4><%= @area %></h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p><%= @bicycle.description %></p>
       </div>
     </div>
     <div class="col-xs-12 col-md-4">
@@ -25,7 +23,6 @@
         <%= render 'layouts/components/date_picker.html.erb' %>
         <button id="update-price" class="btn btn-success">Update Price</button>
         <h3 id ="price_text">Price: £ <span id="total-price"></span></h3>
-        <%= link_to "Book", "/", class: "btn btn-success" %>
       </div>
     </div>
   </div>
@@ -33,9 +30,9 @@
 
 <script>
   function getHours() {
-    if(document.getElementById("search_drop_off").value) {
-      var a = document.getElementById('search_pick_up').value
-      var b = document.getElementById('search_drop_off').value
+    if(document.getElementById("booking_date_end").value) {
+      var a = document.getElementById('booking_date_start').value
+      var b = document.getElementById('booking_date_end').value
       var milliseconds = ((new Date(a)) - (new Date(b)))
       var minutes = milliseconds/(60000)
       var hours = minutes/(60)

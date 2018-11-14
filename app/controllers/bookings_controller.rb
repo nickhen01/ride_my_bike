@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
     @booking.bicycle = find_bicycle
     @booking.user = current_user
     if @booking.save
-      redirect_to bicycle_booking_path(@booking.bicycle, @booking)
+      redirect_to user_bookings_path
     else
       render :new
     end

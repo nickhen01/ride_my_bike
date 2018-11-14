@@ -11,6 +11,7 @@ class BicyclesController < ApplicationController
 
   def show
     area_by_postcode
+    @booking = Booking.new
   end
 
   def new
