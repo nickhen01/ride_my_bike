@@ -1,35 +1,37 @@
-.container {
+.container-form {
   width: 100%;
 
-  .panel {
+  .panel-form {
     width: 100%;
   }
 
-   @media (min-width: 768px) {
+  @media (min-width: 768px) {
     width: 100%;
-   }
+  }
+
+
+  .sidebar {
+    justify-content: space-between;
+    padding-top: 60px;
+    overflow-x: hidden;
+    padding: 10px;
+
+    a {
+      padding: 10px;
+      text-decoration: none;
+      font-size: 16px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+      text-decoration: none;
+      color: darkgrey;
+
+       &:hover {
+        color: black;
+        text-decorattion: none;
+
+       }
+    }
 }
 
-.sidebar {
-  justify-content: space-between;
-  padding-top: 60px;
-  overflow-x: hidden;
-  padding: 10px;
-
-  a {
-    padding: 10px;
-    text-decoration: none;
-    font-size: 16px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-    text-decoration: none;
-    color: darkgrey;
-
-     &:hover {
-      color: black;
-      text-decorattion: none;
-
-     }
-  }
 }
