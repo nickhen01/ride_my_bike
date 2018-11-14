@@ -1,12 +1,22 @@
-<ul>
+<div class="booking-container">
+  <h1>Your bookings</h1>
   <% @bookings.each do |booking| %>
-    <li>
-      <%= cl_image_tag Bicycle.find(booking.bicycle_id).photo %>
-      <p>Brand: <%= Bicycle.find(booking.bicycle_id).brand %></p>
-      <p>Model: <%= Bicycle.find(booking.bicycle_id).model %></p>
-      <p>Start date: <%= booking.date_start %></p>
-      <p>End date: <%= booking.date_end %></p>
-      <%= link_to "delete", bicycle_booking_path(booking.bicycle, booking), method: "delete", data: {confirm: "Are you sure"} %></li>
-    </li>
-  <% end %>
-</ul>
+    <div class="booking-row">
+  <div class="row">
+
+      <div class="col-xs-12 col-sm-4">
+        <%= cl_image_tag Bicycle.find(booking.bicycle_id).photo %>
+      </div>
+      <div class="col-xs-12 col-sm-8">
+            <p>Brand: <%= Bicycle.find(booking.bicycle_id).brand %></p>
+            <p>Model: <%= Bicycle.find(booking.bicycle_id).model %></p>
+            <p>Start date: <%= booking.date_start %></p>
+            <p>End date: <%= booking.date_end %></p>
+          <%= link_to "edit", edit_bicycle_booking_path(booking.bicycle, booking), :class => "btn btn primary booking-button" %>
+          <%= link_to "delete", bicycle_booking_path(booking.bicycle, booking), method: "delete", data: {confirm: "Are you sure"}, :class => "btn btn primary booking-button" %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
