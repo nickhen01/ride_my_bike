@@ -8,7 +8,7 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <%= link_to("Lend a bike", new_bicycle_path, method: "get", class: "navbar-wagon-link navbar-wagon-item") %>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Bookings</a>
+    <%= link_to("Bookings", user_bookings_path, method: "get", class: "navbar-wagon-link navbar-wagon-item") %>
 
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
