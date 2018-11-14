@@ -30,6 +30,7 @@
   position: absolute;
   bottom: 10px;
   left: 10px;
+  font-size: 14px;
 
     .checked {
     color: orange;
@@ -41,11 +42,13 @@
   top: 10px;
   left: 10px;
   text-transform: uppercase;
+  font-size: 14px;
 }
 .card-description a {
   font-family: 'Courgette', "cursive";
   font-size: 15px;
   color: white;
+
 }
 .card-link {
   position: absolute;
