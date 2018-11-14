@@ -3,8 +3,6 @@
     <%= simple_form_for :search, method: "get" do |f| %>
       <%= f.input :pick_up, as: :string, required: false, input_html: {class: "datepicker"} %>
       <%= f.input :drop_off, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.button :submit, "Go", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
-
