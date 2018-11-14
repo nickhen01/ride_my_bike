@@ -1,0 +1,8 @@
+<div class = "date_container">
+  <div class="form-wrapper" style="width: 300px;">
+    <%= simple_form_for :search, method: "get" do |f| %>
+      <%= f.input :pick_up, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= f.input :drop_off, as: :string, required: false, input_html: {class: "datepicker"} %>
+    <% end %>
+  </div>
+</div>
