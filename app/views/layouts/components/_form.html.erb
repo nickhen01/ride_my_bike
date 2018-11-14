@@ -1,0 +1,30 @@
+<div class="panel">
+  <div class="header">
+    <p>Add a bicycle!</p>
+  </div>
+  <%= simple_form_for @bicycle do |f| %>
+  <div class="form-inline">
+    <%= f.input :brand %>
+    </div>
+    <div class="form-inline">
+    <%= f.input :model %>
+    </div>
+    <div class="form-inline">
+      <%= f.input :post_code, label: "Postcode" %>
+    </div>
+    <div class="form-inline">
+    <%= f.input :description, placeholder: "Write a short description of your bike", input_html: { rows: 3 } %>
+  </div>
+  <div class="form-inline">
+    <%= f.input :price, label: "Price per hour (£)" %>
+  </div>
+  <div class="form-inline">
+    <%= f.input :photo %>
+  </div>
+  <div class="form-inline">
+    <%= f.input :photo_cache, as: :hidden %>
+  </div>
+    <label class="form-control-label text optional" for="bicycle_description"></label>
+    <%= f.submit %>
+  <% end %>
+</div>
