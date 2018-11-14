@@ -1,5 +1,6 @@
 .bike_image {
   background-size: cover;
+  background-position: center;
   height: 50vh;
   justify-content: center;
 }
@@ -27,4 +28,8 @@
 
 #price_text {
   margin-bottom: 20px;
+}
+
+p {
+  font-family: 'Nunito', sans-serif !important;
 }
