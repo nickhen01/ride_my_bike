@@ -1,5 +1,6 @@
 <div class="container">
-<h2>Review booking details</h2>
+<h2>Booking confirmed!</h2>
+<h3>Booking details</h3>
   <div class="side-by-side">
     <div class="booking-info">
       <p><strong>Brand: </strong><%= Bicycle.find(@booking.bicycle_id).brand %></p>
@@ -12,7 +13,7 @@
     <div class="bicycle-image">
       <%= cl_image_tag Bicycle.find(@booking.bicycle_id).photo, class: "bicycle-image-size" %><br>
       <div class="confirm-booking">
-        <%= link_to "Confirm Booking", "#", class: "btn btn-primary make-orange" %>
+        <%= link_to "Go to your bookings", user_bookings_path, class: "booking-button" %>
       </div>
     </div>
   </div>
