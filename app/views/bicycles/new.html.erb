@@ -1,16 +1,17 @@
-<div class="container container-form">
-  <div class="col-3 col-sm-3">
-    <div class="sidebar">
-      <div class="main">
-        <%= link_to 'Edit Profil', '/' %>
-        <%= link_to 'Photos', '/' %>
-        <%= link_to 'Reviews', '/' %>
-        <%= link_to 'Trust and Verification', '/' %>
-      </div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 col-offset-4">
+      <h3>Add a bicycle!</h3>
+      <%= simple_form_for @bicycle do |f| %>
+        <%= f.input :brand %>
+        <%= f.input :model %>
+        <%= f.input :post_code, label: "Postcode" %>
+        <%= f.input :description, placeholder: "Write a short description of your bike", input_html: { rows: 3 } %>
+        <%= f.input :price, label: "Price per hour (£)" %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <%= f.submit %>
+      <% end %>
     </div>
-  </div>
-
-  <div class="col-9 col-sm-9">
-    <%= render 'layouts/components/form.html.erb' %>
   </div>
 </div>
