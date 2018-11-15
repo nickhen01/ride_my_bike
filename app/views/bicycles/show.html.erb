@@ -22,8 +22,6 @@
         </div>
         <% unless @bicycle.user == current_user %>
           <%= render 'layouts/components/date_picker.html.erb' %>
-          <button id="update-price" class="btn btn-success">Update Price</button>
-          <h3 id ="price_text">Total Price: £ <span id="total-price"></span></h3>
         <% end %>
         <% if @bicycle.user == current_user %>
           <%= render 'layouts/components/my_bike.html.erb' %>
@@ -45,13 +43,16 @@
     };
   }
 
+// function priceChange() {
+//   var price = document.getElementById("bike_price").innerHTML
+//   var dates = document.getElementById("new_booking")
+//   dates.forEach(function(date) {
+//       date.addEventListener("onChange", function() {
+//         document.getElementById("total-price").innerHTML = -(getHours() * price)
+//       });
+//   });
+// }
 
-  var price = document.getElementById("bike_price").innerHTML
-
-  var button = document.getElementById("update-price")
-  button.addEventListener("click", function(){
-  document.getElementById("total-price").innerHTML = -(getHours() * price)
-  })
 
   function revealBook() {
     if(document.getElementById("booking_date_end").value && document.getElementById("booking_date_start").value) {
@@ -60,8 +61,26 @@
   }
 
   var date_end = document.getElementById("booking_date_end")
+  var date_start = document.getElementById("booking_date_start")
   date_end.addEventListener("input", (event) => {
     revealBook();
   });
+
+  var price = document.getElementById("bike_price").innerHTML
+  date_start.addEventListener("input", (event) => {
+        if(document.getElementById("booking_date_end").value && document.getElementById("booking_date_start").value) {
+          console.log("trigger")
+          document.getElementById("total-price").innerHTML = -(getHours() * price)
+        }
+      });
+  date_end.addEventListener("input", (event) => {
+        if(document.getElementById("booking_date_end").value && document.getElementById("booking_date_start").value) {
+          console.log("trigger")
+          document.getElementById("total-price").innerHTML = -(getHours() * price)
+        }
+      });
+
+
+
 
 </script>
