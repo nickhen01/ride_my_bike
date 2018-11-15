@@ -3,6 +3,12 @@
 //   width: 50%;
 //   padding: 10px;
 
+.vertical-alignment {
+  height: calc(100% - 140px);
+  display: flex;
+  align-items: center;
+}
+
 .panel-form {
   border: 1px solid lightgrey;
   box-sizing: border-box;
