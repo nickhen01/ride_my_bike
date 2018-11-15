@@ -21,6 +21,7 @@ class BicyclesController < ApplicationController
   def create
     @bicycle = Bicycle.new(bicycle_params)
     @bicycle.user = current_user
+    lon_and_lat
     if @bicycle.save
       redirect_to bicycle_path(@bicycle)
     else
@@ -44,6 +45,13 @@ class BicyclesController < ApplicationController
     url = "https://api.postcodes.io/postcodes/#{@bicycle.post_code.delete(" ")}"
     response = JSON.parse(open(url).read)
     @area = response["result"]["admin_district"]
+  end
+
+  def lon_and_lat
+    url = "https://api.postcodes.io/postcodes/#{@bicycle.post_code.delete(" ")}"
+    response = JSON.parse(open(url).read)
+    @bicycle.latitude = response["result"]["latitude"]
+    @bicycle.longitude = response["result"]["longitude"]
   end
 
   private
