@@ -46,6 +46,10 @@ class BicyclesController < ApplicationController
     @area = response["result"]["admin_district"]
   end
 
+  def search_results
+    @bicycles = Bicycle.search_bikes(params[:query])
+  end
+
   private
 
   def bicycle_params

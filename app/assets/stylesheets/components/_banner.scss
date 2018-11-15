@@ -35,3 +35,21 @@
 .banner-content {
   width: 100%;
 }
+
+.search-bar form {
+  display: flex;
+  justify-content: left;
+  margin-left: 50px;
+}
+
+.search-input {
+  width: 470px;
+  height: 2.3em;
+  margin-right: 10px;
+  color: black;
+}
+
+.search-submit {
+  width: 100px;
+}
+
