@@ -11,4 +11,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index] do
     resources :bicycles, only: [:index]
   end
+
+  get 'bicycles-search', to: 'bicycles#search_results'
+  get '/no-results', to: 'bicycles#no_results'
 end

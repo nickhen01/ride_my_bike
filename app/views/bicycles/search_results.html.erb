@@ -1,0 +1,17 @@
+<div class="container">
+  <% if @bicycles.count == 1 %>
+    <h3 class="results-found"><%= @bicycles.count %> result found for "<%= @query %>"</h2>
+  <% end %>
+  <% if @bicycles.count > 1 %>
+    <h3 class="results-found"><%= @bicycles.count %> results found for "<%= @query %>"</h2>
+  <% end %>
+  <div class="search_results_flex">
+    <%= render 'layouts/components/card.html.erb' %>
+    <div
+      id="map"
+      style="width: 100%;
+      height: 600px;"
+      data-markers="<%= @markers.to_json %>"
+    ></div>
+  </div>
+</div>
