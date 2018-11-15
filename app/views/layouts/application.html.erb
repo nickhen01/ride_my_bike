@@ -15,6 +15,9 @@
     <% else %>
       <%= render 'layouts/components/out_navbar.html.erb' %>
     <% end %>
+    <% unless (action_name == "index" && controller_name == "bicycles") %>
+      <div class="fake-navbar"></div>
+    <% end %>
     <%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
