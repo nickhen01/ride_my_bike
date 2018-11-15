@@ -1,6 +1,10 @@
-<div class="container">
-  <h2>Edit bicycle</h2>
-  <%= simple_form_for @bicycle do |f| %>
+<div class="container container-form">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+    <div class="panel panel-form">
+      <div class="header">
+      <p>Edit bicycle</p>
+      </div>
+        <%= simple_form_for @bicycle do |f| %>
         <%= f.input :brand %>
         <%= f.input :model %>
         <%= f.input :post_code, label: "Postcode" %>
@@ -10,4 +14,6 @@
         <%= f.input :photo_cache, as: :hidden %>
         <%= f.submit %>
       <% end %>
+    </div>
+  </div>
 </div>
