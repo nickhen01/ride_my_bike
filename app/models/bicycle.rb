@@ -7,7 +7,7 @@ class Bicycle < ApplicationRecord
 
   include PgSearch
   pg_search_scope :search_bikes,
-    against: [:model, :brand, :description, :post_code],
+    against: [:model, :brand, :description, :post_code, :area],
     using: {
       tsearch: { prefix: true }
     }
