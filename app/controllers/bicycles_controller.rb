@@ -10,6 +10,11 @@ class BicyclesController < ApplicationController
   end
 
   def show
+
+    @bookings = @bicycle.bookings.where("date_start > ?", Date.today)
+    @bookings_array = @bookings.map do |booking|
+      { from: booking.date_start.to_s.split(' ')[0], to: booking.date_end.to_s.split(' ')[0]}
+    end
     area_by_postcode(@bicycle)
     @booking = Booking.new
   end
