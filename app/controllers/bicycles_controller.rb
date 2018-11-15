@@ -7,7 +7,6 @@ class BicyclesController < ApplicationController
 
   def index
     @bicycles = Bicycle.all
-    map
   end
 
   def show
@@ -51,6 +50,7 @@ class BicyclesController < ApplicationController
 
   def search_results
     @bicycles = Bicycle.search_bikes(params[:query])
+    map
   end
 
   def lon_and_lat
