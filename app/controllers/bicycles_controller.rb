@@ -7,7 +7,6 @@ class BicyclesController < ApplicationController
 
   def index
     @bicycles = Bicycle.all
-    map
   end
 
   def show
@@ -51,7 +50,10 @@ class BicyclesController < ApplicationController
 
   def search_results
     @bicycles = Bicycle.search_bikes(params[:query])
+
     redirect_to no_results_path if @bicycles.empty?
+    map
+
   end
 
   def lon_and_lat
@@ -59,7 +61,7 @@ class BicyclesController < ApplicationController
     response = JSON.parse(open(url).read)
     @bicycle.latitude = response["result"]["latitude"]
     @bicycle.longitude = response["result"]["longitude"]
-
+    @bicycle.area = area_by_postcode
   end
 
   def map
