@@ -47,11 +47,17 @@ class BicyclesController < ApplicationController
     @area = response["result"]["admin_district"]
   end
 
+
+  def search_results
+    @bicycles = Bicycle.search_bikes(params[:query])
+  end
+
   def lon_and_lat
     url = "https://api.postcodes.io/postcodes/#{@bicycle.post_code.delete(" ")}"
     response = JSON.parse(open(url).read)
     @bicycle.latitude = response["result"]["latitude"]
     @bicycle.longitude = response["result"]["longitude"]
+
   end
 
   private
