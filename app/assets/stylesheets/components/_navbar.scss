@@ -1,9 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,900');
 
-/* Main navbar */
 .navbar-wagon {
   background-color: transparent;
-  transition: 0.5s background-color ease;
+  transition: background-color 1s ease 0s;
   height: 70px;
   padding: 0px 30px;
   display: flex;
@@ -11,10 +10,16 @@
   justify-content: space-between;
 }
 
+.fake-navbar {
+  height: 70px;
+  width: 100%;
+}
 .navbar-wagon-white {
   background-color: white;
-  position: relative;
+  transition: background-color 1s ease 0s;
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  top: 0;
+  width: 100%;
 }
 /* Logo */
 .navbar-wagon-brand {
@@ -28,8 +33,6 @@
 .navbar-wagon-brand:hover {
   text-decoration: none;
 }
-
-
 
 /* User Avatar */
 .navbar-wagon .avatar {
