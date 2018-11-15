@@ -7,6 +7,7 @@ class BicyclesController < ApplicationController
 
   def index
     @bicycles = Bicycle.all
+    map
   end
 
   def show
@@ -58,6 +59,18 @@ class BicyclesController < ApplicationController
     @bicycle.latitude = response["result"]["latitude"]
     @bicycle.longitude = response["result"]["longitude"]
 
+  end
+
+  def map
+    @bicycles = Bicycle.where.not(latitude: nil, longitude: nil)
+
+    @markers = @bicycles.map do |bicycle|
+      {
+        lng: bicycle.longitude,
+        lat: bicycle.latitude,
+        infoWindow: { content: render_to_string(partial: "/bicycles/map_window", locals: { bicycle: bicycle }) }
+      }
+    end
   end
 
   private
