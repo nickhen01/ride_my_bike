@@ -1,5 +1,10 @@
-<div class="container">
-  <%= link_to "Edit bicycle", edit_bicycle_path %>
-  <%= link_to "Delete bicycle", bicycle_path, method: "delete" %>
-  <%= link_to "Bookings for this bike", bicycle_bookings_all_path(@bicycle) %>
+<div class="booking-buttons">
+  <%= link_to "Edit bicycle", edit_bicycle_path, class: "btn btn-primary" %><br>
 </div>
+<div class="booking-buttons">
+  <%= link_to "Bookings for this bike", bicycle_bookings_all_path(@bicycle), class: "btn btn-primary" %><br>
+</div>
+<div class="booking-buttons">
+  <%= link_to "Delete bicycle", bicycle_path, method: "delete", class: "btn btn-danger" %><br>
+</div>
+
