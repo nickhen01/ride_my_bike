@@ -47,13 +47,10 @@ class BicyclesController < ApplicationController
     @area = response["result"]["admin_district"]
   end
 
-
   def search_results
     @bicycles = Bicycle.search_bikes(params[:query])
-
-    redirect_to no_results_path if @bicycles.empty?
     map
-
+    redirect_to no_results_path if @bicycles.empty?
   end
 
   def lon_and_lat
@@ -65,8 +62,6 @@ class BicyclesController < ApplicationController
   end
 
   def map
-    @bicycles = Bicycle.where.not(latitude: nil, longitude: nil)
-
     @markers = @bicycles.map do |bicycle|
       {
         lng: bicycle.longitude,
