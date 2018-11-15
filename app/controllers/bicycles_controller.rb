@@ -58,7 +58,7 @@ class BicyclesController < ApplicationController
     response = JSON.parse(open(url).read)
     @bicycle.latitude = response["result"]["latitude"]
     @bicycle.longitude = response["result"]["longitude"]
-
+    @bicycle.area = area_by_postcode
   end
 
   def map
