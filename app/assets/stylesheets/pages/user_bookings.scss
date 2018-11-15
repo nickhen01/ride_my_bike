@@ -3,7 +3,7 @@
 }
 
   h1 {
-    margin: 25px;
+    margin-top: 1px;
     font-size: 24px;
   }
 
@@ -21,23 +21,60 @@
       font-size: 16px;
       font-family: "Lato";
     }
+
+    h3 {
+      color: black;
+      font-size: 1.5em;
+
+    }
+}
+
+.booking-container {
+  display: flex;
+  position: relative;
+  padding-top: 20px;
 }
 
 .booking-row {
-  img {
-    width: 300px;
+    padding: 20px;
+    position: absolute;
+    margin-top: 1px;
+    img {
+    width: 100%;
+    float: right;
   }
 
-  .booking-button {
+  .booking-details {
+    padding: 20px;
+    position: absolute;
+    margin-top: 1px;
+  }
+}
+
+
+.booking-button {
     color: #fc7e00;
     border: 1px solid;
     border-radius: 3px;
     padding: 5px;
     text-decoration: none;
-    width: 100px;
+    float: none;
+    margin-top: -6px;
+    margin-right: 2px;
+
 
     &:hover {
       color: #ff5602;
     }
   }
-}
+
+
+
+
+   .bicycle-img {
+    margin: 20px 20px;
+    float: right;
+    width: 60%;
+    border-radius: 3px;
+  }
+

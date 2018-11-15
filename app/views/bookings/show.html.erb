@@ -1,23 +1,27 @@
-<div class="container">
-<h2>Booking confirmed!</h2>
-<h3>Booking details</h3>
-  <div class="side-by-side">
-    <div class="booking-info">
-      <p><strong>Brand: </strong><%= Bicycle.find(@booking.bicycle_id).brand %></p>
-      <p><strong>Model: </strong><%= Bicycle.find(@booking.bicycle_id).model %></p>
-      <p><strong>Start Date: </strong><%= @booking.date_start.strftime("%d/%m/%Y at %l %p") %> </p>
-      <p><strong>End Date: </strong><%= @booking.date_end.strftime("%d/%m/%Y at %l %p") %></p>
-      <p><strong>Total Price: </strong>£<%= @price %></p>
-
-    </div>
-    <div class="bicycle-image">
-      <%= cl_image_tag Bicycle.find(@booking.bicycle_id).photo, class: "bicycle-image-size" %><br>
-      <div class="confirm-booking">
-        <%= link_to "Go to your bookings", user_bookings_path, class: "booking-button" %>
+<div class="container container-form">
+<div class="row">
+    <div class="panel panel-form">
+      <div class="col-xs-12 col-sm-4">
+        <h3>Booking details</h3>
+  <!--   <div class="side-by-side">
+      <div class="booking-info"> -->
+        <div class="booking-details">
+          <p><strong>Brand: </strong><%= Bicycle.find(@booking.bicycle_id).brand %></p>
+          <p><strong>Model: </strong><%= Bicycle.find(@booking.bicycle_id).model %></p>
+          <p><strong>Start Date: </strong><%= @booking.date_start.strftime("%d/%m/%Y at %l %p") %></p>
+          <p><strong>End Date: </strong><%= @booking.date_end.strftime("%d/%m/%Y at %l %p") %></p>
+          <p><strong>Total Price: </strong>£<%= @price %></p>
+            <%= link_to "Go to your bookings", user_bookings_path, :class => "btn btn primary booking-button" %>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-8">
+          <%= cl_image_tag Bicycle.find(@booking.bicycle_id).photo, class: "bicycle-img" %>
       </div>
     </div>
   </div>
 </div>
+
+
 
 
 
