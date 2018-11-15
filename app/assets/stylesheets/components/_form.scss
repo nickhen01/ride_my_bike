@@ -1,3 +1,8 @@
+// .form-center {
+//   margin: auto;
+//   width: 50%;
+//   padding: 10px;
+
 .panel-form {
   border: 1px solid lightgrey;
   box-sizing: border-box;
@@ -14,6 +19,11 @@
     }
 
   }
+
+  // .col-centered {
+  //   float: none;
+  //   margin-right: 0 auto;
+  // }
 
   .simple_form {
     padding: 20px;
@@ -53,6 +63,7 @@
       padding-left: 120px;
     }
   }
+}
 
 
   .form-group {
@@ -91,5 +102,24 @@
       background-color: black;
     }
   }
-}
+  .cancel {
+    position: relative;
+    margin: 0;
+    border-top: none;
+    p {
+      padding:10px 20px;
+      color: black;
+      font-size: 1em;
+
+      a {
+        text-decoration: none;
+        color: black;
+
+        &:hover {
+          color: #E37C56;
+        }
+      }
+    }
+  }
+
 
