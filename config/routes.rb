@@ -7,4 +7,8 @@ Rails.application.routes.draw do
     get 'bookings', to: 'bookings#bicycle_bookings', as: :bookings_all
   end
   get 'bookings', to: 'bookings#user_bookings', as: :user_bookings
+
+  resources :users, only: [:index] do
+    resources :bicycles, only: [:index]
+  end
 end
