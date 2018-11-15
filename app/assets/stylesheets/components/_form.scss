@@ -18,6 +18,8 @@
       font-size: 1em;
     }
 
+
+
   }
 
   // .col-centered {
@@ -51,11 +53,10 @@
     input[type="submit"] {
       padding: initial;
       float: none;
-      background-color: #E57C51;
-      color: #fff;
-      border: none;
-      height: 30px;
-      width: 100px;
+      color: #fc7e00;
+      border: 1px solid;
+      padding: 5px;
+
     }
 
     .form-text {
@@ -120,6 +121,11 @@
         }
       }
     }
+
   }
+
+
+
+
 
 
