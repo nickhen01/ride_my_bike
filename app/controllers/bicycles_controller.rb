@@ -34,6 +34,7 @@ class BicyclesController < ApplicationController
 
   def update
     @bicycle.update(bicycle_params)
+    lon_and_lat
     redirect_to bicycle_path(@bicycle)
   end
 
@@ -59,6 +60,7 @@ class BicyclesController < ApplicationController
     @bicycle.latitude = response["result"]["latitude"]
     @bicycle.longitude = response["result"]["longitude"]
     @bicycle.area = area_by_postcode
+    @bicycle.save
   end
 
   def map
@@ -74,7 +76,7 @@ class BicyclesController < ApplicationController
   private
 
   def bicycle_params
-    params.require(:bicycle).permit(:brand, :model, :user_id, :post_code, :description, :price, :photo)
+    params.require(:bicycle).permit(:brand, :model, :user_id, :post_code, :description, :price, :photo, :longitude, :latitude, :area)
   end
 
   def find_bicycle
