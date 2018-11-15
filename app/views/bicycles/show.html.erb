@@ -20,9 +20,14 @@
           <span class="fa fa-star"></span>
           <span>(23)</span>
         </div>
-        <%= render 'layouts/components/date_picker.html.erb' %>
-        <button id="update-price" class="btn btn-success">Update Price</button>
-        <h3 id ="price_text">Price: £ <span id="total-price"></span></h3>
+        <% unless @bicycle.user == current_user %>
+          <%= render 'layouts/components/date_picker.html.erb' %>
+          <button id="update-price" class="btn btn-success">Update Price</button>
+          <h3 id ="price_text">Price: £ <span id="total-price"></span></h3>
+        <% end %>
+        <% if @bicycle.user == current_user %>
+          <%= render 'layouts/components/my_bike.html.erb' %>
+        <% end %>
       </div>
     </div>
   </div>
