@@ -49,6 +49,7 @@ class BicyclesController < ApplicationController
   end
 
   def search_results
+    @query = params[:query]
     @bicycles = Bicycle.search_bikes(params[:query])
     map
     redirect_to no_results_path if @bicycles.empty?
