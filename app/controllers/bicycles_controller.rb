@@ -50,7 +50,10 @@ class BicyclesController < ApplicationController
 
   def search_results
     @bicycles = Bicycle.search_bikes(params[:query])
+
+    redirect_to no_results_path if @bicycles.empty?
     map
+
   end
 
   def lon_and_lat

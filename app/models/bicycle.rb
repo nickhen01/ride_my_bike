@@ -6,8 +6,8 @@ class Bicycle < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   include PgSearch
-  pg_search_scope :search_bikes,
-    against: [:model, :brand, :description, :post_code, :area],
+  pg_search_scope :search_bikes
+    against: [:model, :brand, :description, :post_code, :area, :price],
     using: {
       tsearch: { prefix: true }
     }
