@@ -14,11 +14,13 @@ class BookingsController < ApplicationController
     @booking = Booking.new
   end
 
+
   def create
     @booking = Booking.new(booking_params)
     @booking.bicycle = find_bicycle
     @booking.user = current_user
     if @booking.save
+      #disable dates from calandar
       redirect_to user_bookings_path
     else
       render :new
