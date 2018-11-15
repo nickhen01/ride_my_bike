@@ -2,6 +2,6 @@ class Bicycle < ApplicationRecord
   belongs_to :user
   has_many :bookings
   validates :price, presence: true, numericality: { only_integer: true }
-  validates_format_of :post_code, with: /\b((?:(?:gir)|(?:[a-pr-uwyz])(?:(?:[0-9](?:[a-hjkpstuw]|[0-9])?)|(?:[a-hk-y][0-9](?:[0-9]|[abehmnprv-y])?)))) ?([0-9][abd-hjlnp-uw-z]{2})\b/
+  validates_format_of :post_code, with: /([Gg][Ii][Rr] 0[Aa]{2})|((([A-Za-z][0-9]{1,2})|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})|(([A-Za-z][0-9][A-Za-z])|([A-Za-z][A-Ha-hJ-Yj-y][0-9][A-Za-z]?))))\s?[0-9][A-Za-z]{2})/
   mount_uploader :photo, PhotoUploader
 end
