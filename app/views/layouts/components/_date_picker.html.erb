@@ -3,7 +3,7 @@
     <%= simple_form_for([@bicycle, @booking], method: "post") do |f| %>
       <%= f.input :date_start, as: :string, required: false, input_html: {class: "datepicker"} %>
       <%= f.input :date_end, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.submit 'Book', class: "btn btn-success" %>
+      <%= f.submit 'Book', class: "btn btn-success hidden", id: "book-btn" %>
     <% end %>
   </div>
 </div>

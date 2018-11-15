@@ -23,7 +23,7 @@
         <% unless @bicycle.user == current_user %>
           <%= render 'layouts/components/date_picker.html.erb' %>
           <button id="update-price" class="btn btn-success">Update Price</button>
-          <h3 id ="price_text">Price: £ <span id="total-price"></span></h3>
+          <h3 id ="price_text">Total Price: £ <span id="total-price"></span></h3>
         <% end %>
         <% if @bicycle.user == current_user %>
           <%= render 'layouts/components/my_bike.html.erb' %>
@@ -52,5 +52,16 @@
   button.addEventListener("click", function(){
   document.getElementById("total-price").innerHTML = -(getHours() * price)
   })
+
+  function revealBook() {
+    if(document.getElementById("booking_date_end").value && document.getElementById("booking_date_start").value) {
+      document.getElementById("book-btn").classList.remove("hidden");
+    }
+  }
+
+  var date_end = document.getElementById("booking_date_end")
+  date_end.addEventListener("input", (event) => {
+    revealBook();
+  });
 
 </script>
