@@ -10,7 +10,6 @@ class BicyclesController < ApplicationController
   end
 
   def show
-
     @bookings = @bicycle.bookings.where("date_start > ?", Date.today)
     @bookings_array = @bookings.map do |booking|
       { from: booking.date_start.to_s.split(' ')[0], to: booking.date_end.to_s.split(' ')[0]}
@@ -51,20 +50,25 @@ class BicyclesController < ApplicationController
     @bicycle.destroy
   end
 
-  def area_by_postcode(bicycle)
-    if !bicycle
-      bicycle = Bicycle.find(params[:id])
-    end
-    url = "https://api.postcodes.io/postcodes/#{bicycle.post_code.delete(" ")}"
-    response = JSON.parse(open(url).read)
-    response["result"]["admin_district"]
-  end
-
   def search_results
     @query = params[:query]
     @bicycles = Bicycle.search_bikes(params[:query])
     map
     redirect_to no_results_path if @bicycles.empty?
+  end
+
+  def my_bikes
+    @bicycles = Bicycle.where(user: current_user)
+  end
+
+  private
+
+  def bicycle_params
+    params.require(:bicycle).permit(:brand, :model, :user_id, :post_code, :description, :price, :photo, :longitude, :latitude, :area)
+  end
+
+  def find_bicycle
+    @bicycle = Bicycle.find(params[:id])
   end
 
   def lon_and_lat(bicycle)
@@ -76,6 +80,15 @@ class BicyclesController < ApplicationController
     bicycle
   end
 
+  def area_by_postcode(bicycle)
+    unless bicycle
+      bicycle = Bicycle.find(params[:id])
+    end
+    url = "https://api.postcodes.io/postcodes/#{bicycle.post_code.delete(" ")}"
+    response = JSON.parse(open(url).read)
+    response["result"]["admin_district"]
+  end
+
   def map
     @markers = @bicycles.map do |bicycle|
       {
@@ -84,15 +97,5 @@ class BicyclesController < ApplicationController
         infoWindow: { content: render_to_string(partial: "/bicycles/map_window", locals: { bicycle: bicycle }) }
       }
     end
-  end
-
-  private
-
-  def bicycle_params
-    params.require(:bicycle).permit(:brand, :model, :user_id, :post_code, :description, :price, :photo, :longitude, :latitude, :area)
-  end
-
-  def find_bicycle
-    @bicycle = Bicycle.find(params[:id])
   end
 end

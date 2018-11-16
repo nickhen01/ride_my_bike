@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   end
 
   get 'bicycles-search', to: 'bicycles#search_results'
-  get '/no-results', to: 'bicycles#no_results'
+  get 'no-results', to: 'bicycles#no_results'
+  get 'my-bikes', to: 'bicycles#my_bikes'
 end
