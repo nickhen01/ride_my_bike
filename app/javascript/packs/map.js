@@ -16,8 +16,16 @@ if (mapElement) { mapboxgl.accessToken = process.env.MAPBOX_API_KEY;
       .setHTML(marker.infoWindow.content))
       .addTo(map);
   })
+  const coords = [];
+  markers.forEach((marker) => {
+    coords.push(String([marker.lng, marker.lat]))
+  });
+  console.log(coords)
   if (markers.length === 0) {
     map.setZoom(1);
+  } else if (coords.every( (val, i, arr) => val === arr[0])) {
+    map.setZoom(14);
+    map.setCenter([markers[0].lng, markers[0].lat]);
   } else if (markers.length === 1) {
     map.setZoom(14);
     map.setCenter([markers[0].lng, markers[0].lat]);
