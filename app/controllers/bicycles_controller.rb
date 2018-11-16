@@ -48,6 +48,7 @@ class BicyclesController < ApplicationController
 
   def destroy
     @bicycle.destroy
+    redirect_to my_bikes_path
   end
 
   def search_results
