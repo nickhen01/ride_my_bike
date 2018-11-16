@@ -1,7 +1,17 @@
-<%= cl_image_tag bicycle.photo %>
-<%= bicycle.brand %>
-<%= bicycle.model %>
-<p>£<%= bicycle.price %>/hr</p>
-<%= link_to "", bicycle_path(bicycle), class: "card-link"%>
-
+<div class="map-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path bicycle.photo %>);">
+  <div class="bicycle-description">
+     <h4><%= bicycle.brand.capitalize + " " + bicycle.model.capitalize %></h4>
+  </div>
+  <div class="bicycle-price">
+    <p>£<%= bicycle.price %>/hr</p>
+  </div>
+  <div class="bicycle-rating">
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star"></span>
+  </div>
+  <%= link_to "", bicycle_path(bicycle), class: "card-link"%>
+</div>
 
