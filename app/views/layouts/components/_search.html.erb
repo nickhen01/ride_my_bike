@@ -1,0 +1,10 @@
+<div class="search-bar">
+    <!--   <form action="/bicycles-search" method="get">
+        <input type="search" class="search-input" q="bicycle-search">
+        <input type="submit" class="search-submit" value="Search">
+      </form> -->
+      <%= form_tag bicycles_search_path, method: "get" do %>
+        <%= text_field_tag :query, "", placeholder: "Let's ride", class: "search-input" %>
+        <%= submit_tag "Search", class: "search-submit" %>
+      <% end %>
+    </div>
