@@ -3,7 +3,7 @@
     <%= simple_form_for([@bicycle, @booking], method: "post") do |f| %>
       <%= f.input :date_start, as: :string, required: false, input_html: {class: "datepicker"} %>
       <%= f.input :date_end, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <h3 id ="price_text">Total Price: £ <span id="total-price"></span></h3>
+      <h3 id ="price_text">Total Price: <span id="currency" class="hidden">£</span><span id="total-price"></span></h3>
       <%= f.submit 'Book', class: "btn btn-success hidden", id: "book-btn" %>
     <% end %>
   </div>
