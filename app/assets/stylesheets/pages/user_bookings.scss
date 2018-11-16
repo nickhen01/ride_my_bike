@@ -61,10 +61,29 @@
     float: none;
     margin-top: -6px;
     margin-right: 2px;
-
+    width: 100%;
 
     &:hover {
       color: #ff5602;
+    }
+  }
+
+  .booking-button-delete {
+    color: #ff4300;
+    border: 1px solid;
+    border-radius: 3px;
+    padding: 5px;
+    text-decoration: none;
+    float: none;
+    margin-top: -6px;
+    margin-right: 2px;
+    width: 100%;
+
+
+    &:hover {
+      color: white;
+      background-color: #ff4300;
+      opacity: 0.5;
     }
   }
 
