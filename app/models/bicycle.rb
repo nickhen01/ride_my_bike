@@ -1,6 +1,6 @@
 class Bicycle < ApplicationRecord
   belongs_to :user
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   validates :price, presence: true, numericality: { only_integer: true }
   validates :photo, presence: true
   validates :brand, presence: true
