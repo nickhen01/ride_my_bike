@@ -1,7 +1,8 @@
-  <div class="white-bar">
-    <div class="simple-header">
-      <h1 class="text-center">You don't have any bookings yet
-      <p><%= link_to "Back", :back %></p></h1>
-    </div>
+<% bicycle = Bicycle.find(params[:bicycle_id]) %>
+<div class="white-bar">
+  <div class="simple-header">
+    <h1 class="text-center">You don't have any bookings for <%= bicycle.brand %> <%= bicycle.model %>yet</h1>
+    <h4 class="text-center"><%= link_to "Back", :back %></h4>
   </div>
+</div>
 
