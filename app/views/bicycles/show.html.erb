@@ -11,7 +11,7 @@
     </div>
     <div class="col-xs-12 col-md-4">
       <div class="booking_card" id="booking_dates" data-array="<%= @bookings_array.to_json %>">
-        <h2 >£<span id="bike_price"><%= @bicycle.price %></span>/hr</h2>
+        <h2>£<span id="bike_price"><%= @bicycle.price %></span>/hr</h2>
         <div class="rating">
           <span class="fa fa-star checked"></span>
           <span class="fa fa-star checked"></span>
@@ -58,12 +58,14 @@
   var price = document.getElementById("bike_price").innerHTML
   date_start.addEventListener("input", (event) => {
         if(document.getElementById("booking_date_end").value && document.getElementById("booking_date_start").value) {
-          document.getElementById("total-price").innerHTML = -(getHours() * price)
+          document.getElementById("total-price").innerHTML = -(getHours() * price);
+          document.getElementById("currency").classList.remove("hidden");
         }
       });
   date_end.addEventListener("input", (event) => {
         if(document.getElementById("booking_date_end").value && document.getElementById("booking_date_start").value) {
-          document.getElementById("total-price").innerHTML = -(getHours() * price)
+          document.getElementById("total-price").innerHTML = -(getHours() * price);
+          document.getElementById("currency").classList.remove("hidden");
         }
       });
 </script>
