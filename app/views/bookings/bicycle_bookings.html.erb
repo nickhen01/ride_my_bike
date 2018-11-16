@@ -1,25 +1,6 @@
-<div class="booking-container">
-  <div class="panel panel-form">
-    <div class="header">
-      <p>Bookings</p>
-    </div>
-    <% @bookings.each do |booking| %>
-      <div class="booking-row">
-        <div class="row">
-        <div class="col-xs-12 col-sm-4">
-          <%= cl_image_tag Bicycle.find(booking.bicycle_id).photo %>
-        </div>
-          <div class="col-xs-12 col-sm-8">
-            <p>Brand: <%= Bicycle.find(booking.bicycle_id).brand %></p>
-            <p>Model: <%= Bicycle.find(booking.bicycle_id).model %></p>
-            <p>Start date: <%= booking.date_start %></p>
-            <p>End date: <%= booking.date_end %></p>
-            <%= link_to "delete", bicycle_booking_path(booking.bicycle, booking), method: "delete", data: {confirm: "Are you sure"}, :class => "btn btn primary booking-button" %>
-          </div>
-        </div>
-    <% end %>
-    </div>
-  </div>
-</div>
-
+<% if @bookings.empty? %>
+  <%= render 'layouts/components/no_bookings_page' %>
+<% else %>
+  <%= render 'bike_bookings' %>
+<% end %>
 

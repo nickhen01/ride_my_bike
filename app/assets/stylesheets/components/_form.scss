@@ -24,6 +24,25 @@
       font-size: 1em;
     }
 
+.white-bar {
+  margin-top: 50px !important;
+}
+
+.simple-header {
+  background-color: #edefed;
+  position: relative;
+  margin: 0;
+  border-top: none;
+  height: 30%;
+
+  text-center {
+    text-align: center;
+    font-size: 32px;
+    padding-top: 50px;
+  }
+}
+
+
 
 
   }
@@ -73,6 +92,16 @@
   }
 }
 
+
+body > div.white-bar > div > h1 {
+  margin-top: 50px;
+}
+
+.white-bar {
+  border: 1px solid #aaa;
+  background-color: white;
+  height: 30%;
+}
 
   .form-group {
     display: flex;
