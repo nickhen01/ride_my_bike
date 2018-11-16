@@ -1,10 +1,11 @@
-<%= render 'layouts/components/search.html.erb' %>
 <div class="container">
+  <%= render 'layouts/components/search.html.erb' %>
+  <br>
   <% if @bicycles.count == 1 %>
-    <h3 class="results-found"><%= @bicycles.count %> result found for "<%= @query %>"</h2>
+    <p class="results-found"><%= @bicycles.count %> result found for "<%= @query %>"</p>
   <% end %>
   <% if @bicycles.count > 1 %>
-    <h3 class="results-found"><%= @bicycles.count %> results found for "<%= @query %>"</h2>
+    <p class="results-found"><%= @bicycles.count %> results found for "<%= @query %>"</p>
   <% end %>
   <div class="search_results_flex">
     <%= render 'layouts/components/card.html.erb' %>
