@@ -10,7 +10,9 @@ if (mapElement) { mapboxgl.accessToken = process.env.MAPBOX_API_KEY;
   });
   const markers = JSON.parse(mapElement.dataset.markers);
   markers.forEach((marker) => {
-    new mapboxgl.Marker()
+    var el = document.createElement('div');
+    el.className = 'marker';
+    new mapboxgl.Marker(el)
       .setLngLat([marker.lng, marker.lat])
       .setPopup(new mapboxgl.Popup({ offset: 25 })
       .setHTML(marker.infoWindow.content))
